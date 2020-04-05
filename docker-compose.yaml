@@ -1,0 +1,22 @@
+
+version: "3.7"
+services:
+
+  web:
+    image: nginx:1.7
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+  wds:
+    image: benlittle6/vue
+    command: yarn serve
+    expose:
+      - "8080"
+    volumes:
+      - ${VUE_PROJECT_DIR}:/work:ro
+    working_dir: /work
+    environment:
+      - VUE_HOSTNAME
+
