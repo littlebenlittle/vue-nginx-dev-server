@@ -35,5 +35,5 @@ export VUE_PROJECT_DIR=<project dir>
 docker-compose up
 ```
 
-and navigate to `http://<dev server host>/`
+and navigate to `http://<dev server host>:8080/`
 
